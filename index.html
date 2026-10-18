@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b1020" />
+  <meta name="description" content="Portfolio of Lisha D S — electronics and communication engineer, award-winning NCC cadet, and technology enthusiast." />
+  <title>Lisha D S | Engineer • Leader • Innovator</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #111a2d;
+      --panel-2: #15213a;
+      --text: #f4f6fb;
+      --muted: #b7c1d6;
+      --gold: #f2c879;
+      --teal: #7de0d0;
+      --line: rgba(255,255,255,.12);
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: radial-gradient(ellipse at 80% 0%, #1c2a49 0, var(--bg) 45%);
+      color: var(--text); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+    a { color: inherit; }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin: auto; }
+    header { position: sticky; top: 0; z-index: 10; background: rgba(11,16,32,.86); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+    nav { display: flex; align-items: center; justify-content: space-between; min-height: 72px; gap: 20px; }
+    .brand { font-weight: 800; letter-spacing: .08em; text-decoration: none; }
+    .brand span { color: var(--gold); }
+    .navlinks { display: flex; gap: 22px; align-items: center; flex-wrap: wrap; }
+    .navlinks a { text-decoration: none; color: var(--muted); font-size: .92rem; }
+    .navlinks a:hover { color: var(--gold); }
+    .menu-btn { display: none; background: transparent; color: var(--text); border: 1px solid var(--line); border-radius: 10px; padding: 8px 12px; }
+    .hero { padding: 96px 0 76px; display: grid; grid-template-columns: 1.35fr .65fr; gap: 50px; align-items: center; }
+    .eyebrow { color: var(--teal); text-transform: uppercase; letter-spacing: .18em; font-size: .78rem; font-weight: 800; }
+    h1 { font-size: clamp(3rem, 7vw, 5.8rem); line-height: 1.02; letter-spacing: -.055em; margin: 18px 0; }
+    h1 .accent { color: var(--gold); }
+    .hero p { max-width: 650px; font-size: 1.12rem; color: var(--muted); }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 18px; border-radius: 999px; text-decoration: none; font-weight: 750; border: 1px solid var(--line); transition: transform .2s, background .2s; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn.primary { background: var(--gold); color: #151827; border-color: var(--gold); }
+    .btn.secondary { color: var(--text); background: rgba(255,255,255,.03); }
+    .hero-card { border: 1px solid rgba(242,200,121,.35); border-radius: 28px; padding: 28px; background: linear-gradient(150deg, rgba(242,200,121,.13), rgba(125,224,208,.06)); box-shadow: 0 25px 80px rgba(0,0,0,.22); }
+    .monogram { width: 112px; height: 112px; border-radius: 28px; display: grid; place-items: center; font-size: 2.5rem; font-weight: 900; color: var(--gold); background: rgba(242,200,121,.12); border: 1px solid rgba(242,200,121,.35); margin-bottom: 24px; }
+    .hero-card h2 { margin: 0 0 8px; font-size: 1.2rem; }
+    .hero-card p { margin: 0; font-size: .98rem; }
+    .mini-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 24px; }
+    .stat { padding: 14px; border-radius: 16px; background: rgba(0,0,0,.18); }
+    .stat strong { display: block; color: var(--gold); font-size: 1.45rem; }
+    .stat span { color: var(--muted); font-size: .82rem; }
+    section { padding: 76px 0; border-top: 1px solid var(--line); }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 20px; margin-bottom: 30px; }
+    .section-head h2 { margin: 8px 0 0; font-size: clamp(2rem, 4vw, 3.2rem); letter-spacing: -.04em; line-height: 1.1; }
+    .section-head p { max-width: 480px; color: var(--muted); margin: 0; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .card { border: 1px solid var(--line); background: linear-gradient(150deg, rgba(255,255,255,.055), rgba(255,255,255,.018)); border-radius: 22px; padding: 24px; }
+    .card .tag { display: inline-block; font-size: .74rem; color: var(--teal); text-transform: uppercase; letter-spacing: .12em; font-weight: 800; margin-bottom: 12px; }
+    .card h3 { margin: 0 0 10px; font-size: 1.22rem; line-height: 1.3; }
+    .card p { margin: 0; color: var(--muted); font-size: .96rem; }
+    .card .impact { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line); color: var(--gold); font-weight: 750; font-size: .9rem; }
+    .timeline { display: grid; gap: 14px; }
+    .timeline-item { display: grid; grid-template-columns: 150px 1fr; gap: 24px; padding: 22px 0; border-bottom: 1px solid var(--line); }
+    .timeline-item:last-child { border-bottom: 0; }
+    .timeline-date { color: var(--gold); font-weight: 800; }
+    .timeline-item h3 { margin: 0 0 5px; }
+    .timeline-item p { color: var(--muted); margin: 0; }
+    .skills { display: flex; flex-wrap: wrap; gap: 10px; }
+    .pill { padding: 10px 14px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); background: rgba(255,255,255,.025); }
+    .about-box { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .about-box p { color: var(--muted); margin-top: 0; }
+    .quote { font-size: 1.45rem; line-height: 1.45; color: var(--text); border-left: 3px solid var(--gold); padding-left: 22px; }
+    .contact { display: flex; align-items: center; justify-content: space-between; gap: 28px; padding: 34px; border-radius: 26px; background: linear-gradient(110deg, rgba(242,200,121,.13), rgba(125,224,208,.08)); border: 1px solid rgba(242,200,121,.25); }
+    .contact h2 { margin: 0 0 8px; font-size: clamp(1.8rem, 4vw, 2.7rem); }
+    .contact p { color: var(--muted); margin: 0; }
+    footer { padding: 28px 0; color: var(--muted); font-size: .88rem; }
+    .footer-row { display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; }
+    .small-note { font-size: .8rem; color: #8793ac; margin-top: 12px; }
+    @media (max-width: 850px) {
+      .hero { grid-template-columns: 1fr; padding-top: 70px; }
+      .hero-card { max-width: 520px; }
+      .grid { grid-template-columns: repeat(2, 1fr); }
+      .section-head { align-items: start; flex-direction: column; }
+      .about-box { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .wrap { width: min(100% - 28px, var(--max)); }
+      .menu-btn { display: inline-block; }
+      .navlinks { display: none; position: absolute; top: 71px; left: 0; right: 0; padding: 18px 22px; background: #0d1427; border-bottom: 1px solid var(--line); flex-direction: column; align-items: flex-start; }
+      .navlinks.open { display: flex; }
+      .grid { grid-template-columns: 1fr; }
+      .timeline-item { grid-template-columns: 1fr; gap: 5px; }
+      .contact { align-items: flex-start; flex-direction: column; padding: 25px; }
+      section { padding: 58px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="wrap" aria-label="Main navigation">
+      <a class="brand" href="#home">LISHA<span>.</span></a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navlinks">Menu</button>
+      <div class="navlinks" id="navlinks">
+        <a href="#about">About</a><a href="#achievements">Achievements</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="wrap hero" id="home">
+      <div>
+        <div class="eyebrow">Engineer · Leader · Innovator</div>
+        <h1>Hi, I'm <span class="accent">Lisha D S.</span></h1>
+        <p>Electronics and Communication Engineering graduate, award-winning Naval NCC cadet, and technology enthusiast. I enjoy building practical solutions at the intersection of electronics, embedded systems, and social impact.</p>
+        <div class="actions">
+          <a class="btn primary" href="#projects">Explore my work ↘</a>
+          <a class="btn secondary" href="#achievements">View achievements</a>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <div class="monogram" aria-label="Lisha initials">LDS</div>
+        <h2>Curiosity with purpose.</h2>
+        <p>From FPGA-based systems to bee-conservation technology, I believe engineering is most meaningful when it solves real problems.</p>
+        <div class="mini-stats">
+          <div class="stat"><strong>₹1L</strong><span>HiveLink project grant</span></div>
+          <div class="stat"><strong>2026</strong><span>Defence Minister Commendation</span></div>
+          <div class="stat"><strong>1st</strong><span>Krishi — IUCEE AUNSF</span></div>
+          <div class="stat"><strong>ECE</strong><span>Engineering background</span></div>
+        </div>
+      </aside>
+    </div>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">A little about me</div><h2>Technology, service<br>and meaningful impact.</h2></div>
+          <p>My journey brings together engineering, leadership, national-level NCC experiences, and a drive to keep learning.</p>
+        </div>
+        <div class="about-box">
+          <div class="card">
+            <h3>My background</h3>
+            <p>I studied Electronics and Communication Engineering at St Joseph Engineering College, Mangaluru. My interests include FPGA design, digital systems, microelectronics, embedded technology, and practical applications of AI and image processing.</p>
+            <p>Through the Indian Naval Wing of the National Cadet Corps, I developed discipline, teamwork, communication, and the confidence to brief and represent my unit at national-level events.</p>
+          </div>
+          <div class="card">
+            <div class="quote">“Build technology that works in the real world—and use leadership to make the impact bigger.”</div>
+            <p style="margin-top:20px">Outside technical work, I enjoy singing, dancing, sports, and contributing to student communities and social-impact initiatives.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="achievements">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">Recognition</div><h2>Achievements I'm proud of.</h2></div>
+          <p>Milestones that reflect service, communication, teamwork, and innovation.</p>
+        </div>
+        <div class="grid">
+          <article class="card"><span class="tag">National recognition · 2026</span><h3>Defence Minister Commendation</h3><p>Honoured by Defence Minister Shri Rajnath Singh at Republic Day Camp 2026. You shared that you were the sole Navy-wing cadet among six cadets honoured nationally that year, and the first cadet from Mangaluru to receive this recognition.</p></article>
+          <article class="card"><span class="tag">NCC · RDC 2025</span><h3>Best Cadet — Navy (SW)</h3><p>Selected as Best Cadet from the Karnataka & Goa Directorate for the Republic Day Camp 2025.</p></article>
+          <article class="card"><span class="tag">NCC awards</span><h3>Chief of Army Staff Award</h3><p>Recognised for Best Briefing, along with a Deputy Director General commendation for contribution and performance.</p></article>
+          <article class="card"><span class="tag">Innovation · National</span><h3>HiveLink — 1st Prize</h3><p>Bee-conservation initiative recognised at Azim Premji University’s National Challenge, with a ₹1 lakh grant and collaboration with Sheffield Hallam University.</p></article>
+          <article class="card"><span class="tag">Innovation · IUCEE AUNSF</span><h3>Krishi — 1st Prize</h3><p>Smart Farming Aid using image processing, designed to support plant-health assessment and farming decisions.</p></article>
+          <article class="card"><span class="tag">Leadership & culture</span><h3>Student leadership and Bharatanatyam</h3><p>Leadership roles across IEEE SJEC, Samarthya, IUCEE and Innoventure; also earned district-level distinctions in Bharatanatyam and Shastriya Sangeetham.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">Selected work</div><h2>Projects with purpose.</h2></div>
+          <p>A mix of digital design, image processing, embedded systems, and community-centred innovation.</p>
+        </div>
+        <div class="grid">
+          <article class="card"><span class="tag">Bee conservation · IoT + AI</span><h3>HiveLink</h3><p>A bee-colony monitoring and conservation concept developed to support beekeepers and address real-world colony health challenges, including issues affecting beekeepers in Bantwal.</p><div class="impact">₹1 lakh grant · Sheffield Hallam collaboration</div></article>
+          <article class="card"><span class="tag">Smart agriculture · Image processing</span><h3>Krishi</h3><p>A smart farming aid concept using image processing to help identify plant-health concerns and make agricultural support more accessible.</p><div class="impact">1st Prize · IUCEE AUNSF</div></article>
+          <article class="card"><span class="tag">FPGA · Digital design</span><h3>Static Symbology Overlay</h3><p>Worked on FPGA-based waveform generation, memory interfaces, and static symbology overlay concepts using Xilinx Vivado and FPGA development boards.</p><div class="impact">DRDO–CEMILAC internship experience</div></article>
+          <article class="card"><span class="tag">Computer vision</span><h3>TB Detection using Image Processing</h3><p>An academic project exploring image-processing methods to support tuberculosis screening research.</p></article>
+          <article class="card"><span class="tag">Embedded systems · Safety</span><h3>Alcohol-Detection Helmet</h3><p>A safety-oriented prototype concept combining sensing and embedded logic to discourage unsafe vehicle operation.</p></article>
+          <article class="card"><span class="tag">IoT · Public safety</span><h3>Gas Leakage Detection</h3><p>A gas-leakage monitoring concept using sensors and communication features to support early alerts.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">Experience & leadership</div><h2>Learning by doing.</h2></div>
+          <p>Technical exposure and leadership experiences that shaped how I approach challenges.</p>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item"><div class="timeline-date">2025–2026</div><div><h3>DRDO — CEMILAC · Internship</h3><p>Worked with FPGA-oriented tasks including waveform generation, MIG DDR3 interface using the Xilinx 7 Series MIG IP core, and static symbology overlay for avionics. Tools and boards included Xilinx Vivado, Basys-3, ZCU102, Kria, and Artix-7 AC701.</p></div></div>
+          <div class="timeline-item"><div class="timeline-date">Leadership</div><div><h3>IEEE SJEC Mangaluru Subsection · President</h3><p>Contributed to student technical engagement and community-building through IEEE.</p></div></div>
+          <div class="timeline-item"><div class="timeline-date">Leadership</div><div><h3>Samarthya Club · Vice President</h3><p>Supported student activities and initiatives within the Electronics and Communication Engineering community.</p></div></div>
+          <div class="timeline-item"><div class="timeline-date">Leadership</div><div><h3>IUCEE SJEC · Project Head</h3><p>Helped drive project-based learning and innovation initiatives; also served as a core member of Innoventure SJEC.</p></div></div>
+          <div class="timeline-item"><div class="timeline-date">NCC</div><div><h3>Indian Naval Wing · 6 KAR Naval Unit</h3><p>Petty Officer Cadet; completed NCC B and C Certificates and represented the Karnataka & Goa Directorate at Republic Day Camp.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">Toolbox</div><h2>Skills & interests.</h2></div>
+          <p>A growing toolkit across electronics, programming, digital systems, and data-driven problem solving.</p>
+        </div>
+        <div class="skills">
+          <span class="pill">Verilog HDL</span><span class="pill">VHDL</span><span class="pill">FPGA Design</span><span class="pill">Xilinx Vivado</span><span class="pill">Digital Systems</span><span class="pill">MATLAB / Simulink</span><span class="pill">C</span><span class="pill">C++</span><span class="pill">Python</span><span class="pill">HTML</span><span class="pill">CSS</span><span class="pill">JavaScript</span><span class="pill">Image Processing</span><span class="pill">IoT</span><span class="pill">Sensors</span><span class="pill">SQL</span><span class="pill">Power BI</span><span class="pill">Team Leadership</span><span class="pill">Public Speaking</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact">
+          <div><div class="eyebrow">Let's connect</div><h2>Have an idea or opportunity?</h2><p>I'd love to connect about engineering, innovation, leadership, and meaningful projects.</p></div>
+          <div class="actions">
+            <!-- Replace the placeholder links below with your public contact details. -->
+            <a class="btn primary" href="mailto:YOUR_EMAIL@example.com">Email me ↗</a>
+            <a class="btn secondary" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          </div>
+        </div>
+        <p class="small-note">Before publishing, replace the email placeholder and LinkedIn link, and review all dates and achievement wording for accuracy.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row"><span>© <span id="year"></span> Lisha D S</span><span>Built with purpose, curiosity & a little courage.</span></div>
+  </footer>
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navlinks = document.getElementById('navlinks');
+    menuBtn.addEventListener('click', () => {
+      const open = navlinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(open));
+    });
+    navlinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navlinks.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
